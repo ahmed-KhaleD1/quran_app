@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/utils/app_styles.dart';
 
-class MenuButton extends StatelessWidget {
-  const MenuButton({super.key});
+class MenuCloseButton extends StatelessWidget {
+  const MenuCloseButton({super.key});
 
   @override
   Widget build(BuildContext context) {

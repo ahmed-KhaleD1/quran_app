@@ -19,3 +19,7 @@ class SabhuhSuccess extends SabhuhState {}
 class UpdateTotalTasbihCount extends SabhuhState {}
 
 class UpdateCurrentTasbihIndex extends SabhuhState {}
+
+class EnableAutoReplacement extends SabhuhState {}
+
+class UpdateAutoresetTasbihCounter extends SabhuhState {}

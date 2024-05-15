@@ -16,7 +16,6 @@ class CurveLineAndCirclePainter extends CustomPainter {
       ..quadraticBezierTo(size.width / 2 + 60, size.height / 2 - 120,
           size.width - 10, size.height);
     canvas.drawPath(path, paint);
-    canvas.drawPath(path, paint);
 
     drawCirclesOnCurve(canvas, path, size);
   }

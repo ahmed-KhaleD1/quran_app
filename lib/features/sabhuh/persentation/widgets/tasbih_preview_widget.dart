@@ -21,9 +21,14 @@ class TasbihPreviewWidget extends StatelessWidget {
         TasbihCard(
           tasbihModel: tasbihModel,
         ),
-        Text(
-          sabhuhCubit.totalTasbihCount.toString(),
-          style: AppStyles.digetalBold100(context),
+        Flexible(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              sabhuhCubit.currentTasbihCount.toString(),
+              style: AppStyles.digetalBold100(context),
+            ),
+          ),
         ),
       ],
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/constants.dart';
 import 'package:quran_app/core/databases/cache/cache_helper.dart';
 import 'package:quran_app/core/functions/navigation.dart';
 import 'package:quran_app/core/router/app_router.dart';
 import 'package:quran_app/core/services/service_locator.dart';
 import 'package:quran_app/core/utils/app_assets.dart';
+import 'package:quran_app/core/utils/shared_preference_keys.dart';
 import 'package:quran_app/core/widgets/custom_animated_icon.dart';
 
 class SplashView extends StatefulWidget {
@@ -19,7 +19,9 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
 
-    if (getIt<CacheHelper>().getData(key: kIsOnBaordingVisitedKey) ?? false) {
+    if (getIt<CacheHelper>()
+            .getData(key: SharedPreferencesKey.isOnBaordingVisited) ??
+        false) {
       delayedNavigation(path: AppRouter.homeView);
     } else {
       delayedNavigation(path: AppRouter.onboardingView);

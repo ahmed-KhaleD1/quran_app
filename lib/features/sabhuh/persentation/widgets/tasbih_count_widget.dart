@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/core/functions/convert_form%20english%20number_to%20_arbic.dart';
 import 'package:quran_app/core/utils/app_styles.dart';
 
 class TasbihCountWidget extends StatelessWidget {
@@ -16,7 +17,7 @@ class TasbihCountWidget extends StatelessWidget {
               end: Alignment.bottomCenter)),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(
-          tasbihCount,
+          convertFormEnglishNumberToArabic(int.parse(tasbihCount)),
           style: AppStyles.kufiMedium14(context),
         ),
         Text(

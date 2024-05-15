@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quran_app/constants.dart';
 import 'package:quran_app/core/databases/cache/cache_helper.dart';
 import 'package:quran_app/core/functions/navigation.dart';
 import 'package:quran_app/core/router/app_router.dart';
 import 'package:quran_app/core/services/service_locator.dart';
 import 'package:quran_app/core/utils/app_colors.dart';
+import 'package:quran_app/core/utils/shared_preference_keys.dart';
 import 'package:quran_app/core/widgets/buttons/custom_floating_action_button.dart';
 import 'package:quran_app/core/widgets/custom_dots_indicator.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
@@ -53,8 +53,9 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
                   CustomFloationgActionButton(
                       onPressed: () {
                         if (currentPageIndex == 0) {
-                          getIt<CacheHelper>()
-                              .put(key: kIsOnBaordingVisitedKey, value: true);
+                          getIt<CacheHelper>().put(
+                              key: SharedPreferencesKey.isOnBaordingVisited,
+                              value: true);
                           customReplacementNav(context,
                               path: AppRouter.homeView);
                         } else {

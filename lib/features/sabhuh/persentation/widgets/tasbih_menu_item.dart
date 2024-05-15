@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quran_app/core/functions/convert_form%20english%20number_to%20_arbic.dart';
 import 'package:quran_app/core/models/azkar_model/azkar_data_model.dart';
 import 'package:quran_app/core/utils/app_colors.dart';
 import 'package:quran_app/core/utils/app_styles.dart';
@@ -9,10 +10,12 @@ class TasbihMenuItem extends StatelessWidget {
       {super.key,
       required this.azkarDataModel,
       required this.indexNumber,
-      required this.isActive});
+      required this.isActive,
+      required this.totalTasbihCount});
   final AzkarDataModel azkarDataModel;
   final String indexNumber;
   final bool isActive;
+  final int totalTasbihCount;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -43,7 +46,7 @@ class TasbihMenuItem extends StatelessWidget {
               const SizedBox(
                 height: 4,
               ),
-              Ink(
+              Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.grey.shade100,
@@ -77,7 +80,7 @@ class TasbihMenuItem extends StatelessWidget {
                             size: 20,
                           ),
                           Text(
-                            '۷۰',
+                            convertFormEnglishNumberToArabic(totalTasbihCount),
                             style: AppStyles.splartMedium16(context),
                           )
                         ],

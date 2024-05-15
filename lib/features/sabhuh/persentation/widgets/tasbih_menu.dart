@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/utils/app_colors.dart';
 import 'package:quran_app/core/utils/app_styles.dart';
 import 'package:quran_app/features/sabhuh/persentation/view-model/cubit/sabhuh_cubit.dart';
-import 'package:quran_app/features/sabhuh/persentation/widgets/menu_button.dart';
+import 'package:quran_app/features/sabhuh/persentation/widgets/buttons/menu_button.dart';
 import 'package:quran_app/features/sabhuh/persentation/widgets/tasbih_menu_list_view.dart';
 
 class TasbihMenu extends StatelessWidget {
@@ -15,7 +15,6 @@ class TasbihMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      scrollable: true,
       titlePadding: EdgeInsets.zero,
       actionsPadding: const EdgeInsets.symmetric(vertical: 16),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
@@ -48,7 +47,8 @@ class TasbihMenu extends StatelessWidget {
           sabhuhCubit: sabhuhCubit,
         ),
       ),
-      actions: const [MenuButton()],
+      actionsOverflowAlignment: OverflowBarAlignment.center,
+      actions: const [MenuCloseButton()],
     );
   }
 }

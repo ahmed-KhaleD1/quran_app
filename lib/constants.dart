@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-const String kIsOnBaordingVisitedKey = 'isOnBoardingVisted';
 const BoxShadow kBoxShadow = BoxShadow(
   color: Color(0x3F000000),
   blurRadius: 5,
@@ -52,4 +51,3 @@ const Map<String, String> numberMap = {
   '8': '۸',
   '9': '۹'
 };
-const String kSabhuhBox = 'sabhuhBox';

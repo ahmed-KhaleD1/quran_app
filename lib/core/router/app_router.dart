@@ -48,7 +48,7 @@ abstract class AppRouter {
           ),
           BlocProvider(
             create: (context) =>
-                SabhuhCubit(getIt.get<AzkarRepoImpl>())..featchTasbih(),
+                SabhuhCubit(getIt.get<AzkarRepoImpl>())..featchTasbihData(),
           )
         ],
         child: const HomeView(),

@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:quran_app/constants.dart';
 import 'package:quran_app/core/databases/cache/cache_helper.dart';
 import 'package:quran_app/core/functions/setup_location_service.dart';
 import 'package:quran_app/core/router/app_router.dart';
 import 'package:quran_app/core/services/service_locator.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 bool isLocationEnabled = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  await Hive.openBox(kSabhuhBox);
 
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(

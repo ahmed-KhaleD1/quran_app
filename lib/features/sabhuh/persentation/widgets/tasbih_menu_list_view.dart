@@ -28,6 +28,7 @@ class TasbihMenuListView extends StatelessWidget {
             Navigator.of(context).pop();
           },
           child: TasbihMenuItem(
+            totalTasbihCount: sabhuhCubit.totalTasbihCountList![index],
             isActive: sabhuhCubit.currentTasbihIndex == index,
             indexNumber: convertFormEnglishNumberToArabic(index + 1),
             azkarDataModel: sabhuhCubit.allAzkarModel.azkarList[index],

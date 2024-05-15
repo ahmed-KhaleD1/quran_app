@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quran_app/core/models/azkar_model/azkar_data_model.dart';
@@ -50,10 +52,11 @@ class TasbihCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 32,
+            SizedBox(
+              height: max(8, MediaQuery.sizeOf(context).height * 0.015),
             ),
-            TasbihInfoWidget(tasbihModel: tasbihModel),
+            TasbihInfoWidget(
+                tasbihModel: tasbihModel, sabhuhCubit: sabhuhCubit),
           ],
         ),
       ),
