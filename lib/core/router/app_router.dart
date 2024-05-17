@@ -4,10 +4,12 @@ import 'package:quran_app/core/services/service_locator.dart';
 import 'package:quran_app/core/models/azkar_model/all_azkar_model.dart';
 import 'package:quran_app/core/models/azkar_model/azkar_data_model.dart';
 import 'package:quran_app/core/models/azkar_model/azkar_item_model.dart';
-import 'package:quran_app/features/azkar/data/repos/azkar_repo_impl.dart';
+import 'package:quran_app/core/repos/azkar_repo_impl.dart';
 import 'package:quran_app/features/azkar/presentation/view/azkar_details_view.dart';
 import 'package:quran_app/features/azkar/presentation/view/azkar_view.dart';
 import 'package:quran_app/features/azkar/presentation/view_model/azkar_cubit.dart';
+import 'package:quran_app/features/doaa/presentation/view/doaa_view.dart';
+import 'package:quran_app/features/doaa/presentation/view_model/doaa_cubit.dart';
 import 'package:quran_app/features/home/presentation/view_model/home_cubit.dart';
 import 'package:quran_app/features/home/presentation/views/home_view.dart';
 import 'package:quran_app/features/moshaf/data/repos/quran_repo_impl.dart';
@@ -24,6 +26,7 @@ abstract class AppRouter {
   static const String homeView = '/homeView';
   static const String sorahView = '/sorahView';
   static const String azkarDetailsView = '/azkarDetailsView';
+  static const String doaaView = '/doaaView';
 
   static final GoRouter router = GoRouter(routes: [
     GoRoute(
@@ -38,7 +41,7 @@ abstract class AppRouter {
       path: homeView,
       builder: (context, state) => MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => Homecubit()),
+          BlocProvider(create: (context) => HomeCubit()),
           BlocProvider(
               create: (context) =>
                   AzkarCubit(getIt.get<AzkarRepoImpl>())..featchAzkar()),
@@ -62,6 +65,14 @@ abstract class AppRouter {
       path: azkarDetailsView,
       builder: (context, state) => AzkarDetailsView(
         azkar: state.extra as AzkarItemModel,
+      ),
+    ),
+    GoRoute(
+      path: doaaView,
+      builder: (context, state) => BlocProvider(
+        create: (context) =>
+            DoaaCubit(getIt.get<AzkarRepoImpl>())..featchDoaa(),
+        child: const DoaaView(),
       ),
     ),
   ]);

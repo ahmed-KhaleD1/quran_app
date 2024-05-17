@@ -24,15 +24,14 @@ class OnboardingPageView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ExpandablePageView.builder(
+    return PageView.builder(
       controller: pageController,
       physics: const BouncingScrollPhysics(),
-      reverse: true,
       itemCount: onboardingList.length,
       itemBuilder: (context, index) {
         return OnboardingPageViewItem(
           item: onboardingList[index],
-          currentPageIndex: onboardingList.length - 1 - index,
+          currentPageIndex: index,
         );
       },
     );

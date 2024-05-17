@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/models/azkar_model/all_azkar_model.dart';
 
 class AzkarItemModel {
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final AllAzkarModel azkar;
-  final String image, title;
+  final String? image;
+  final String title;
 
   AzkarItemModel(
-      {required this.backgroundColor,
+      {this.backgroundColor,
       required this.title,
       required this.azkar,
-      required this.image});
+      this.image});
 }

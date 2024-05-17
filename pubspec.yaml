@@ -47,6 +47,7 @@ dependencies:
   location: ^5.0.0
   shared_preferences: ^2.2.2
   shimmer: ^3.0.0
+  jhijri: ^1.0.0
 
 dependency_overrides:
   intl: any
@@ -72,6 +73,7 @@ flutter:
     - assets/json/
     - assets/images/azkar/
     - assets/images/sabhuh/
+    - assets/images/doaa/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

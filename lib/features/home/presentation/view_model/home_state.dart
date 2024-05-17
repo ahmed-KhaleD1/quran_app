@@ -1,16 +1,22 @@
-abstract class Homestate {
-  const Homestate();
+import 'package:quran_app/features/home/data/models/prayer_models.dart';
+
+abstract class HomeState {
+  const HomeState();
 }
 
-class HomeInitialState extends Homestate {}
+class HomeInitialState extends HomeState {}
 
-class PrayertimeLoading extends Homestate {}
+class PrayertimeLoading extends HomeState {}
 
-class PrayertimeSuccess extends Homestate {}
+class PrayertimeSuccess extends HomeState {
+  final PrayerModel prayerModel;
 
-class PrayertimeFailure extends Homestate {
+  const PrayertimeSuccess({required this.prayerModel});
+}
+
+class PrayertimeFailure extends HomeState {
   final String message;
   PrayertimeFailure({required this.message});
 }
 
-class CurrentPageState extends Homestate {}
+class CurrentPageState extends HomeState {}

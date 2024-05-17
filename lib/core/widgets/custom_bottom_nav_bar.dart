@@ -14,9 +14,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
   @override
   Widget build(BuildContext context) {
-    final homeCibit = BlocProvider.of<Homecubit>(context);
+    final homeCibit = BlocProvider.of<HomeCubit>(context);
 
-    return BlocBuilder<Homecubit, Homestate>(
+    return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return BottomAppBar(
             height: 50,

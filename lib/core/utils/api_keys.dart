@@ -6,6 +6,7 @@ class ApiKeys {
     "أذكار النوم",
     "أذكار الاستيقاظ",
   ];
+  static const List<String> doaaKeys = ["أدعية قرآنية", "أدعية الأنبياء"];
 }
 //  static const Map<String, String> azkarBackgroundColors = {
 //     "أذكار الصباح": "assets/images/azkar/sun.webp",

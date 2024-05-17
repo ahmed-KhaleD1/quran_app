@@ -9,7 +9,6 @@ class PrayTimeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 75,
       width: 69,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -27,7 +26,7 @@ class PrayTimeCard extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               prayerTimeModel.time,
-              style: AppStyles.splartMedium24(context),
+              style: AppStyles.splartMedium24(context).copyWith(height: 0.8),
             ),
           ),
           FittedBox(

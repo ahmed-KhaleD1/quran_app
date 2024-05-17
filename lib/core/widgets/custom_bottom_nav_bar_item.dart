@@ -12,13 +12,14 @@ class CustomBottomNavigationBarItem extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap,
-      child: SvgPicture.asset(
-        iconAsset,
-        color: color,
-        width: 32,
-        height: 32,
+      child: SizedBox(
+        height: 50,
+        child: SvgPicture.asset(
+          iconAsset,
+          color: color,
+        ),
       ),
     );
   }

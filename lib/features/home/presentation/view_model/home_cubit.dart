@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:location/location.dart';
@@ -8,14 +10,15 @@ import 'package:adhan/adhan.dart';
 import 'package:quran_app/features/home/presentation/widgets/home_view_body.dart';
 import 'package:quran_app/main.dart';
 
-class Homecubit extends Cubit<Homestate> {
-  Homecubit() : super(HomeInitialState());
+class HomeCubit extends Cubit<HomeState> {
+  HomeCubit() : super(HomeInitialState());
 
   Location location = Location();
   late PrayerModel prayerModel;
   Widget currentScreen = const HomeViewBody();
   int currentTap = 3;
   String appbarTitle = AppStrings.homeAppBarTitle;
+
   Future<void> getPrayerTimes() async {
     emit(PrayertimeLoading());
     try {
@@ -24,7 +27,7 @@ class Homecubit extends Cubit<Homestate> {
       Coordinates myCoordinates = await getCoordinates();
       final prayerTimes = PrayerTimes.today(myCoordinates, params);
       prayerModel = PrayerModel.fromPrayerTimesModel(prayerTimes);
-      emit(PrayertimeSuccess());
+      emit(PrayertimeSuccess(prayerModel: prayerModel));
     } on Exception catch (e) {
       emit(PrayertimeFailure(message: e.toString()));
     }

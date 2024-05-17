@@ -9,6 +9,7 @@ import 'package:quran_app/core/utils/shared_preference_keys.dart';
 import 'package:quran_app/core/widgets/buttons/custom_floating_action_button.dart';
 import 'package:quran_app/core/widgets/custom_dots_indicator.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
+import 'package:quran_app/features/onboarding/persentation/widgets/onboarding_navigation_section.dart';
 import 'package:quran_app/features/onboarding/persentation/widgets/onboarding_page_view.dart';
 
 class OnboardingViewBody extends StatefulWidget {
@@ -19,7 +20,7 @@ class OnboardingViewBody extends StatefulWidget {
 }
 
 class _OnboardingViewBodyState extends State<OnboardingViewBody> {
-  int currentPageIndex = 2;
+  int currentPageIndex = 0;
   late PageController pageController;
 
   @override
@@ -27,7 +28,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
     super.initState();
     pageController = PageController();
     pageController.addListener(() {
-      currentPageIndex = 2 - pageController.page!.round();
+      currentPageIndex = pageController.page!.round();
       setState(() {});
     });
   }
@@ -35,49 +36,17 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return CustomGradientBackground(
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-              child: OnboardingPageView(pageController: pageController)),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 48,
-            ),
+      child: Column(
+        children: [
+          Expanded(child: OnboardingPageView(pageController: pageController)),
+          const SizedBox(
+            height: 48,
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomFloationgActionButton(
-                      onPressed: () {
-                        if (currentPageIndex == 0) {
-                          getIt<CacheHelper>().put(
-                              key: SharedPreferencesKey.isOnBaordingVisited,
-                              value: true);
-                          customReplacementNav(context,
-                              path: AppRouter.homeView);
-                        } else {
-                          pageController.nextPage(
-                            duration: const Duration(milliseconds: 400),
-                            curve: Curves.decelerate,
-                          );
-                        }
-                      },
-                      color: AppColor.deepPurple,
-                      iconData: currentPageIndex == 0
-                          ? FontAwesomeIcons.flag
-                          : FontAwesomeIcons.chevronLeft),
-                  CustomdotsIndicator(currentPageIndex: currentPageIndex),
-                ],
-              ),
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 70,
-            ),
+          OnboardingNavigationSection(
+              currentPageIndex: currentPageIndex,
+              pageController: pageController),
+          const SizedBox(
+            height: 70,
           ),
         ],
       ),

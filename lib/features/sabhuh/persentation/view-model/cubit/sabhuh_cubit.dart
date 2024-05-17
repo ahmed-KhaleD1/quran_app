@@ -5,7 +5,7 @@ import 'package:quran_app/core/models/azkar_model/all_azkar_model.dart';
 import 'package:quran_app/core/models/azkar_model/azkar_data_model.dart';
 import 'package:quran_app/core/services/service_locator.dart';
 import 'package:quran_app/core/utils/shared_preference_keys.dart';
-import 'package:quran_app/features/azkar/data/repos/azkar_repo.dart';
+import 'package:quran_app/core/repos/azkar_repo.dart';
 
 part 'sabhuh_state.dart';
 

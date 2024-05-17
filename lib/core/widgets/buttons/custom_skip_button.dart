@@ -12,16 +12,16 @@ class CustomSkipButton extends StatelessWidget {
         onTap: onTap,
         child: Row(
           children: [
-            const Icon(
-              Icons.arrow_back_ios,
-              size: 16,
-              color: AppColor.deepPurple,
-            ),
             Text(
               text,
               style: AppStyles.kufiMedium16(context)
                   .copyWith(color: AppColor.deepPurple),
-            )
+            ),
+            const Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+              color: AppColor.deepPurple,
+            ),
           ],
         ));
   }

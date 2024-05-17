@@ -38,6 +38,14 @@ class Assets {
   static const String imagesColoredMoshafwithShadow =
       "assets/images/coloredMoshafwithShadow.svg";
 
+  /// Assets for imagesDoaaDoaa
+  /// assets/images/doaa/doaa.webp
+  static const String imagesDoaaDoaa = "assets/images/doaa/doaa.webp";
+
+  /// Assets for imagesDoaaQuran
+  /// assets/images/doaa/quran.webp
+  static const String imagesDoaaQuran = "assets/images/doaa/quran.webp";
+
   /// Assets for imagesHomeMainSectionsAzkar
   /// assets/images/home/main_sections/azkar.svg
   static const String imagesHomeMainSectionsAzkar =
@@ -100,10 +108,30 @@ class Assets {
   /// assets/images/home/sebha.svg
   static const String imagesHomeSebha = "assets/images/home/sebha.svg";
 
+  /// Assets for imagesHomeThePeriodOfTheDayAfternoon
+  /// assets/images/home/the_period_of_the_day/afternoon.svg
+  static const String imagesHomeThePeriodOfTheDayAfternoon =
+      "assets/images/home/the_period_of_the_day/afternoon.svg";
+
+  /// Assets for imagesHomeThePeriodOfTheDayEvening
+  /// assets/images/home/the_period_of_the_day/evening.svg
+  static const String imagesHomeThePeriodOfTheDayEvening =
+      "assets/images/home/the_period_of_the_day/evening.svg";
+
+  /// Assets for imagesHomeThePeriodOfTheDayMorning
+  /// assets/images/home/the_period_of_the_day/morning.svg
+  static const String imagesHomeThePeriodOfTheDayMorning =
+      "assets/images/home/the_period_of_the_day/morning.svg";
+
   /// Assets for imagesHomeThePeriodOfTheDayNight
   /// assets/images/home/the_period_of_the_day/night.svg
   static const String imagesHomeThePeriodOfTheDayNight =
       "assets/images/home/the_period_of_the_day/night.svg";
+
+  /// Assets for imagesHomeThePeriodOfTheDayNoon
+  /// assets/images/home/the_period_of_the_day/noon.svg
+  static const String imagesHomeThePeriodOfTheDayNoon =
+      "assets/images/home/the_period_of_the_day/noon.svg";
 
   /// Assets for imagesNumShape
   /// assets/images/numShape.svg
@@ -133,6 +161,10 @@ class Assets {
   static const String imagesRemoveBookmark =
       "assets/images/remove_bookmark.png";
 
+  /// Assets for imagesSabhuhFlag
+  /// assets/images/sabhuh/flag.svg
+  static const String imagesSabhuhFlag = "assets/images/sabhuh/flag.svg";
+
   /// Assets for imagesSabhuhLeftArrow
   /// assets/images/sabhuh/left_arrow.svg
   static const String imagesSabhuhLeftArrow =
@@ -142,7 +174,6 @@ class Assets {
   /// assets/images/sabhuh/right_arrow.svg
   static const String imagesSabhuhRightArrow =
       "assets/images/sabhuh/right_arrow.svg";
-  static const String imagesSabhuhFlag = 'assets/images/sabhuh/flag.svg';
   static const Map<String, String> azkarImageList = {
     "أذكار الصباح": "assets/images/azkar/sun.webp",
     "أذكار المساء": "assets/images/azkar/evening.webp",

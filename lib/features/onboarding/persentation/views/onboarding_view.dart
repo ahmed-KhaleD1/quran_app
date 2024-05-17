@@ -17,20 +17,21 @@ class OnboardingView extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       appBar: AppBar(
-        title: CustomSkipButton(
-            text: 'تخطي',
-            onTap: () {
-              getIt<CacheHelper>().put(
-                  key: SharedPreferencesKey.isOnBaordingVisited, value: true);
-              customReplacementNav(context, path: AppRouter.homeView);
-            }),
+        title: Text(
+          AppStrings.appName,
+          style: AppStyles.kufiBold28(context),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              AppStrings.appName,
-              style: AppStyles.kufiBold28(context),
-            ),
+            child: CustomSkipButton(
+                text: 'تخطي',
+                onTap: () {
+                  getIt<CacheHelper>().put(
+                      key: SharedPreferencesKey.isOnBaordingVisited,
+                      value: true);
+                  customReplacementNav(context, path: AppRouter.homeView);
+                }),
           )
         ],
       ),
