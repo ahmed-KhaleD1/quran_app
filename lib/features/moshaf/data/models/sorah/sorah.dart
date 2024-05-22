@@ -17,14 +17,18 @@ class SorahModel {
     this.ayahs,
   });
 
-  factory SorahModel.fromJson(Map<String, dynamic> json) => SorahModel(
+  factory SorahModel.fromJson(
+          Map<String, dynamic> json, List<dynamic> tafseerJsonData) =>
+      SorahModel(
         number: json['number'] as int?,
         name: json['name'] ?? '',
         englishName: json['englishName'] ?? '',
         revelationType: json['revelationType'] as String?,
-        ayahs: (json['ayahs'] as List<dynamic>?)
-            ?.map((e) => Ayah.fromJson(e as Map<String, dynamic>))
-            .toList(),
+        ayahs: (json['ayahs'] as List<dynamic>?)!.asMap().entries.map((e) {
+          int index = e.key;
+          var value = e.value;
+          return Ayah.fromJson(value, tafseerJsonData[index]['text']);
+        }).toList(),
       );
 
   Map<String, dynamic> toJson() => {

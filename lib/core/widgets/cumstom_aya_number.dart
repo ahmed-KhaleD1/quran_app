@@ -26,7 +26,7 @@ class CustomAyaNumber extends StatelessWidget {
         child: Text(
           number,
           style: AppStyles.scheherazadeMedium12(context),
-          textDirection: TextDirection.ltr, // Set text direction to LTR
+          textDirection: TextDirection.rtl,
         ),
       ),
     );

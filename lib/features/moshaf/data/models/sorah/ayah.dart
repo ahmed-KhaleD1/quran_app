@@ -8,6 +8,7 @@ class Ayah {
   int? page;
   int? hizbQuarter;
   bool? sajda;
+  String? tafseer;
 
   Ayah({
     this.number,
@@ -17,19 +18,20 @@ class Ayah {
     this.page,
     this.hizbQuarter,
     this.sajda,
+    this.tafseer,
   });
 
-  factory Ayah.fromJson(Map<String, dynamic> json) => Ayah(
-        number: json['number'] as int?,
-        text: json['text'] as String?,
-        numberInSurah: json['numberInSurah'] as int?,
-        juz: json['juz'] as int?,
-        page: json['page'] as int?,
-        hizbQuarter: json['hizbQuarter'] as int?,
-        sajda: json['sajda'] is Map<String, dynamic>
-            ? json['sajda']['recommended']
-            : json['sajda'] as bool?,
-      );
+  factory Ayah.fromJson(Map<String, dynamic> json, String tafseer) => Ayah(
+      number: json['number'] as int?,
+      text: json['text'] as String?,
+      numberInSurah: json['numberInSurah'] as int?,
+      juz: json['juz'] as int?,
+      page: json['page'] as int?,
+      hizbQuarter: json['hizbQuarter'] as int?,
+      sajda: json['sajda'] is Map<String, dynamic>
+          ? json['sajda']['recommended']
+          : json['sajda'] as bool?,
+      tafseer: tafseer);
 
   Map<String, dynamic> toJson() => {
         'number': number,

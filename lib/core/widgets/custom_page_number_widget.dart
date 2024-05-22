@@ -26,7 +26,7 @@ class CustomPageNumberWidget extends StatelessWidget {
       ),
       child: Center(
           child: Text(
-        '546',
+        pageNumber,
         style: AppStyles.scheherazadeMedium16(context),
       )),
     );

@@ -6,4 +6,6 @@ abstract class AppFonst {
   static const String amiri = 'Amiri';
   static const String scheherazade = 'Scheherazade';
   static const String digital = 'Digital';
+  static const String notoNask = 'NotoNask';
+  static const String ayatQuran = 'AyatQuran';
 }

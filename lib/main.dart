@@ -45,6 +45,7 @@ class QuranApp extends StatelessWidget {
       ],
       supportedLocales: const [
         Locale('ar'),
+        Locale('en'),
       ],
       routerConfig: AppRouter.router,
     );

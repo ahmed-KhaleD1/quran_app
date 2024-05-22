@@ -11,6 +11,14 @@ abstract class AppStyles {
     );
   }
 
+  static TextStyle quransemiBold18(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontFamily: AppFonst.quran,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle kufiRegular16(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
@@ -71,6 +79,15 @@ abstract class AppStyles {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: AppFonst.kufi,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle kufiSemiBold16(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: AppFonst.kufi,
+      color: Colors.white,
       fontWeight: FontWeight.w600,
     );
   }
@@ -217,6 +234,14 @@ abstract class AppStyles {
         color: Colors.black);
   }
 
+  static TextStyle scheherazadeMedium20(BuildContext context) {
+    return TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 20),
+        fontFamily: AppFonst.scheherazade,
+        fontWeight: FontWeight.w500,
+        color: Colors.white);
+  }
+
   static TextStyle scheherazadeMedium16(BuildContext context) {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 16),
@@ -246,6 +271,22 @@ abstract class AppStyles {
         fontSize: getResponsiveFontSize(context, fontSize: 100),
         fontFamily: AppFonst.digital,
         fontWeight: FontWeight.w700,
+        color: Colors.black);
+  }
+
+  static TextStyle notoNaskSemiBold20(BuildContext context) {
+    return TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 20),
+        fontFamily: AppFonst.notoNask,
+        fontWeight: FontWeight.w600,
+        color: Colors.black);
+  }
+
+  static TextStyle ayatQuranNumber(BuildContext context) {
+    return TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 20),
+        fontFamily: AppFonst.ayatQuran,
+        fontWeight: FontWeight.w400,
         color: Colors.black);
   }
 }

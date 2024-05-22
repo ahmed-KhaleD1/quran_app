@@ -6,7 +6,7 @@ part 'moshaf_state.dart';
 
 class MoshafCubit extends Cubit<MoshafState> {
   MoshafCubit(this.quranRepo) : super(MoshafInitial());
-
+  int currentPage = -1;
   final QuranRepo quranRepo;
   void featchQuran() async {
     emit(MoshafLoading());
@@ -17,4 +17,13 @@ class MoshafCubit extends Cubit<MoshafState> {
       emit(MoshafSuccess(sorahList));
     }
   }
+
+  // bool isANewPage(int pageNumber) {
+  //   if (pageNumber != currentPage) {
+  //     currentPage = pageNumber;
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 }

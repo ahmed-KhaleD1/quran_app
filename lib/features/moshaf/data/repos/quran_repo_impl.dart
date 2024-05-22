@@ -9,10 +9,13 @@ class QuranRepoImpl implements QuranRepo {
   @override
   Future<List<SorahModel>> featchQuran() async {
     try {
-      var jsonData = await _apiService.get('assets/json/quran.json');
+      List<dynamic> jsonData = await _apiService.get('assets/json/quran.json');
+      var tafseerJsonData = await _apiService.get('assets/json/tafseer.json');
+
       List<SorahModel> sorahList = [];
-      for (var item in jsonData) {
-        sorahList.add(SorahModel.fromJson(item));
+      for (int i = 0; i < jsonData.length; i++) {
+        sorahList
+            .add(SorahModel.fromJson(jsonData[i], tafseerJsonData[i]['ayahs']));
       }
       print(sorahList);
       return sorahList;

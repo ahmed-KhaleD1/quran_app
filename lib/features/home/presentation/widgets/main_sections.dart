@@ -52,7 +52,7 @@ class MainSections extends StatelessWidget {
             onTap: () {
               homeCubit.updateCurrentPage(
                   currentPage: const MoshafView(),
-                  index: 4,
+                  index: 1,
                   appbarTitle: 'القرآن الكريم');
             },
             backgroundImage: Assets.imagesHomeMainSectionsReading2,
@@ -100,7 +100,7 @@ class MainSections extends StatelessWidget {
                           if (index == 0) {
                             homeCubit.updateCurrentPage(
                                 currentPage: const SabhuhView(),
-                                index: 1,
+                                index: 4,
                                 appbarTitle: 'السبحة');
                           } else if (index == 1) {
                             customNav(context, path: AppRouter.doaaView);

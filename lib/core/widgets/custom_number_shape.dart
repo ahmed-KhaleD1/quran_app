@@ -5,11 +5,14 @@ import 'package:quran_app/core/utils/app_colors.dart';
 import 'package:quran_app/core/utils/app_styles.dart';
 
 class CustomNumberShape extends StatelessWidget {
-  const CustomNumberShape({
-    super.key,
-    required this.number,
-  });
+  const CustomNumberShape(
+      {super.key,
+      required this.number,
+      this.iconColor = AppColor.deepPurple,
+      this.numberColor = Colors.black});
   final String number;
+  final Color iconColor;
+  final Color numberColor;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,11 +20,12 @@ class CustomNumberShape extends StatelessWidget {
         width: 50,
         child: Stack(
           children: [
-            SvgPicture.asset(Assets.imagesNumShape, color: AppColor.deepPurple),
+            SvgPicture.asset(Assets.imagesNumShape, color: iconColor),
             Center(
                 child: Text(
               number,
-              style: AppStyles.splartMedium24(context),
+              style: AppStyles.splartMedium24(context)
+                  .copyWith(color: numberColor),
             ))
           ],
         ));
